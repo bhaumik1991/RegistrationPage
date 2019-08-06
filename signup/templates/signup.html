@@ -1,0 +1,72 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+  <h1>User Registration Details</h1>
+  <div class="container">
+    <div class="form-group">
+      {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+        <li>
+          <div class="alert alert-success"> {{ message }}</div>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    <div class="col-md-10">
+      <form method="post" class="" class="form-horizontal">
+        {% csrf_token %}
+        <div class="form-group">
+          <label class="col-md-3 control-label">Username</label>
+        <div class="col-md-6">
+          {{frm.user_name}}
+          {{frm.username.errors}}
+        </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">Email Id</label>
+        <div class="col-md-6">
+          {{frm.email}}
+          {{frm.email.errors}}
+        </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">First Name</label>
+        <div class="col-md-6">
+          {{frm.first_name}}
+        </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">Last Name</label>
+        <div class="col-md-6">
+          {{frm.last_name}}
+        </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-2 control-label">Password</label>
+        <div class="col-md-6">
+          {{frm.password}}
+        </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">Confirm Password</label>
+        <div class="col-md-6">
+          {{frm.confirm_password}}
+          {{frm.confirm_password.errors}}
+        </div>
+        </div>
+        <button type="submit">Sign Up</button>
+        <button type="submit">Log In</button>
+      </form>
+
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>
